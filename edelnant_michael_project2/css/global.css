@@ -97,9 +97,10 @@ header h1 {
 footer {
 				
 	/*Generic properties*/
-	padding: 1.5em 0;
+	padding: 1.5em 1.5em;
 	border-top: .3em solid #fff;
 	border-bottom: .3em solid #ffffff;
+	overflow: hidden;
 
 	/*Text*/
 	font-size: 1.2em;
@@ -127,17 +128,49 @@ footer {
 
 }
 
-footer a {
-	color: #FCDA7F;
-}
+	footer a, 
+	footer a:link, 
+	footer a:visited {
+		
+		/*Generic Properties*/
+		display: block;
+		width: 47%;
+		padding: .25em 0;
+		border-radius: 1em;
+		border: 2px solid #363D4F;
+		
+		/*Text*/
+		font-family: 'Oldenburg', cursive;
+		font-size: 1.25em;
+		text-shadow: 	0 -.15em 0 rgba(54,61,79,1);
+		color: #FFF2CF;
+
+		/*Background*/
+		background: rgb(96,108,136); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(96,108,136,1) 21%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+
+	}
+
+	footer a:first-child {float: left;}
+	footer a:last-child {float: right;}
+	footer a:hover {text-decoration: none;}
 
 /*MainContent Wrapper*/
 section#mainContent {
 	position: relative;
+	
 	padding: 2em 2em 2em 1.5em;
+	margin: 0 0 .5em 0;
+	
 	border-top: .3em solid #fff;
 	border-bottom: .3em solid #fff;
-	margin: 0 0 .5em 0;
+
 	z-index: 2;
 }
 
@@ -200,11 +233,17 @@ form fieldset legend span:after
 /*Style Default Labels*/
 form fieldset label,
 form fieldset h2 {
-	color: rgb(77,82,95);
+	
+	/*Generic Properties*/
 	display: block;
+	margin: 0 0 .25em 0;
+
+	/*Text*/
+	color: rgb(77,82,95);
 	font-weight: bold;
 	font-size: 1.5em;
-	margin: 0 0 .25em 0;
+
+	/*Shadows*/
 	text-shadow: 0 .1em 0 rgba(255,255,255,1);
 }
 
@@ -315,6 +354,10 @@ form input[type="button"]{
 }
 
 form input[type="button"]:hover {
+	
+	/*Text*/
+   	color: #3F2A0C;
+	
 	/*Inverted background with increased top shadow*/
 	background: rgb(137,76,28); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(137,76,28,1) 0%, rgba(201,135,42,1) 17%, rgba(248,181,0,1) 61%, rgba(248,181,0,1) 100%); /* FF3.6+ */
@@ -326,11 +369,9 @@ form input[type="button"]:hover {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#894c1c', endColorstr='#f8b500',GradientType=0 ); /* IE6-9 */
 
 	/*Tweak Box Shadow to inset and add bottom lip highlight*/
-   	box-shadow:         	inset 0 .2em 1em #9F7609,
-   							0 .1em 0 #ffffff;
+   	box-shadow:		inset 0 .2em 1em #9F7609,
+   					0 .1em 0 #ffffff;
 
-   	/*Text*/
-   	color: #3F2A0C;
 }
 
 
