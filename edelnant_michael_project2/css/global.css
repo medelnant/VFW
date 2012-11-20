@@ -1,0 +1,299 @@
+/*Import Custom Fonts*/
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(http://fonts.googleapis.com/css?family=Oldenburg);
+
+
+body {
+	margin: .75em 0 0 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	background: url(../img/bgTexture.jpg) 0 0 repeat;
+}
+
+a, a:link, a:visited, a:hover {
+	color: #FCDA7F;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+/*Reset margins and padding on page elements*/
+h1,h2,h3,
+ul, 
+ul li,
+fieldset,
+fieldset legend{
+	margin: 0;
+	padding: 0;
+}
+
+header,
+footer {
+	text-align: center;
+}
+
+header {
+	/*Header Background*/
+	background: #fceabb; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fceabb 0%, #fccd4d 50%, #fbdf93 87%, #f9b813 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fceabb), color-stop(50%,#fccd4d), color-stop(87%,#fbdf93), color-stop(100%,#f9b813)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#fbdf93 87%,#f9b813 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#fbdf93 87%,#f9b813 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fceabb 0%,#fccd4d 50%,#fbdf93 87%,#f9b813 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fceabb 0%,#fccd4d 50%,#fbdf93 87%,#f9b813 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f9b813',GradientType=0 ); /* IE6-9 */
+
+	/*Header Top & Bottom Borders*/
+	border-top: 3px solid #fff;
+
+	/*DropShadow border illusion
+		btmBlue Border
+		topBlue Border
+		veryTopWhite Border
+	*/
+	box-shadow: 0px .5em 0px rgb(77,82,95), 
+				0px -.5em 0px rgb(77,82,95),
+				0px -.75em 0px #fff;
+
+	/*Padding*/
+	padding: 0 0 .25em 0;
+
+}
+
+header h1 {
+	/*Script Font*/
+	font-family: 'Pacifico', cursive;
+
+	/*Text Size*/
+	font-size: 2.5em;
+
+	/*Text Color*/
+	color: rgb(77,82,95);
+
+	/*Text-Shadow*/
+	text-shadow: 0px 2px 0px #FFF58F;
+
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+footer {
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #ffffff;
+	font-size: 1.2em;
+	color: #FCDA7F;
+	box-shadow: 0px -.5em 0px #133859,
+				0px .5em 0px #133859,
+				0px .7em 0px #fff,
+				0px -10px 20px rgba(0, 0, 0, 0.3),
+				0px 10px 20px rgba(0, 0, 0, 0.3);
+				
+	padding: 1.5em 0;
+
+	/*Background*/
+	background: rgb(249,184,19); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(249,184,19,1) 0%, rgba(251,223,147,1) 13%, rgba(252,205,77,1) 50%, rgba(252,234,187,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,184,19,1)), color-stop(13%,rgba(251,223,147,1)), color-stop(50%,rgba(252,205,77,1)), color-stop(100%,rgba(252,234,187,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(249,184,19,1) 0%,rgba(251,223,147,1) 13%,rgba(252,205,77,1) 50%,rgba(252,234,187,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(249,184,19,1) 0%,rgba(251,223,147,1) 13%,rgba(252,205,77,1) 50%,rgba(252,234,187,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(249,184,19,1) 0%,rgba(251,223,147,1) 13%,rgba(252,205,77,1) 50%,rgba(252,234,187,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(249,184,19,1) 0%,rgba(251,223,147,1) 13%,rgba(252,205,77,1) 50%,rgba(252,234,187,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b813', endColorstr='#fceabb',GradientType=0 ); /* IE6-9 */
+
+	/*Margin Offset*/
+	margin: 0 0 .9em 0;	
+
+}
+
+footer a {
+	color: #FCDA7F;
+}
+
+section#mainContent {
+	position: relative;
+	padding: 2em 2em 2em 1.5em;
+	border-top: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+	margin: 0 0 .5em 0;
+	z-index: 2;
+}
+
+
+/*Remove bullets from list-items*/
+form ul li {
+	list-style: none;
+	margin: 0 0 1em 0;
+}
+
+
+/*Form styling*/
+form fieldset {
+	border: none;
+	padding: 3em 0 0 0;
+}
+form fieldset legend {
+	/*Change the Legend around to where I can make it full width*/
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	/*Text*/
+	font-family: 'Oldenburg', cursive;
+	font-weight: normal;
+	font-size: 1.2em;
+	color: #FFF;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+
+	/*Text Padding*/
+	padding: .5em 0;
+	text-align: center;
+
+	/*Background*/
+	background: -moz-linear-gradient(top,  rgba(0,42,79,1) 0%, rgba(0,35,72,0.6) 51%, rgba(0,28,66,0.82) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,42,79,1)), color-stop(51%,rgba(0,35,72,0.6)), color-stop(100%,rgba(0,28,66,0.82))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,42,79,1) 0%,rgba(0,35,72,0.6) 51%,rgba(0,28,66,0.82) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,42,79,1) 0%,rgba(0,35,72,0.6) 51%,rgba(0,28,66,0.82) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,42,79,1) 0%,rgba(0,35,72,0.6) 51%,rgba(0,28,66,0.82) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,42,79,1) 0%,rgba(0,35,72,0.6) 51%,rgba(0,28,66,0.82) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002a4f', endColorstr='#d1001c42',GradientType=0 ); /* IE6-9 */
+
+	/*Btm Border*/
+	border-bottom: 3px solid #fff;
+
+	/*Shadow*/
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+form fieldset legend span:before,
+form fieldset legend span:after
+ { 
+	content:" ★ ";
+	color: #FCDB83;
+}
+
+/*Style Default Labels*/
+form fieldset label,
+form fieldset h2 {
+	color: rgb(77,82,95);
+	display: block;
+	font-weight: bold;
+	font-size: 1.5em;
+	margin: 0 0 .25em 0;
+	text-shadow: 0px 1px 0px rgba(255,255,255,1);
+}
+
+/*Lets have a little fun with an icon for main parent labels*/
+form fieldset label span:before,
+form fieldset h2 span:before {
+	content:" ♨ ";
+	color: #837D79;
+}
+
+/*Special Case for Radios and Checkboxes via .inlineLabelGroup class*/
+form fieldset .inlineLabelGroup label {
+	display: inline;
+}
+
+form fieldset .inlineLabelGroup {
+	overflow: hidden;
+}
+/*Float list-items next to one another : max of 3 across per percentage*/
+form fieldset .inlineLabelGroup ul li {
+	display: block;
+	width: 50%;
+	float: left;
+}
+
+
+/*Set percentage widths on most elements of the page*/
+form input[type="button"], 
+form fieldset input[type="text"],
+form fieldset input[type="range"],
+form fieldset input[type="date"],
+form fieldset select,
+form fieldset textarea{
+	width: 99%;
+	font-size: 1.5em;
+}
+
+form fieldset input[type="text"],
+form fieldset input[type="date"],
+form fieldset textarea {
+	padding: .5em 0 .5em .5em;
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+	border: 1px solid #ccc;	
+}
+
+form fieldset input[type="text"]:focus,
+form fieldset input[type="date"]:focus,
+form fieldset textarea:focus {
+	border: 1px solid rgb(77,82,95);
+	box-shadow: 0px 0px 10px rgba(125, 170, 223, .75);
+	outline: none;
+	color: rgb(77,82,95);
+}
+
+form input[type="button"]{
+	padding: .1em 0;
+	border: 1px solid #ccc;
+
+	/*Text*/
+	font-family: 'Oldenburg', cursive;
+	font-size: 2em;
+	color: rgb(77,82,95);
+
+	/*Background*/
+	background: rgb(252,234,187); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,234,187,1)), color-stop(50%,rgba(252,205,77,1)), color-stop(51%,rgba(248,181,0,1)), color-stop(100%,rgba(251,223,147,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(252,234,187,1) 0%,rgba(252,205,77,1) 50%,rgba(248,181,0,1) 51%,rgba(251,223,147,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
+
+	/*Shadows*/
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+	text-shadow: 0px 2px 0px #FFF58F;
+
+	/*Cursor*/
+	cursor: pointer;
+
+	/*Border-radius*/
+	border-radius: 10px;
+
+	/*Border*/
+	border: 2px solid #9F7609;
+
+}
+
+form input[type="button"]:hover {
+	/*Inverted background with increased top shadow*/
+	background: rgb(137,76,28); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(137,76,28,1) 0%, rgba(201,135,42,1) 17%, rgba(248,181,0,1) 61%, rgba(248,181,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,76,28,1)), color-stop(17%,rgba(201,135,42,1)), color-stop(61%,rgba(248,181,0,1)), color-stop(100%,rgba(248,181,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#894c1c', endColorstr='#f8b500',GradientType=0 ); /* IE6-9 */
+
+	/*Tweak Box Shadow to inset and add bottom lip highlight*/
+   	-moz-box-shadow:    	inset 0 2px 10px #9F7609,
+   							0 2px 0 #ffffff;
+   	-webkit-box-shadow: 	inset 0 2px 10px #9F7609,
+   							0 2px 0 #ffffff;
+   	box-shadow:         	inset 0 2px 10px #9F7609,
+   							0 2px 0 #ffffff;
+
+   	/*Text-color*/
+   	color: #3F2A0C;
+}
+
+
+
