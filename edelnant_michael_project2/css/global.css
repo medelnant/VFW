@@ -326,12 +326,8 @@ form input[type="button"]:hover {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#894c1c', endColorstr='#f8b500',GradientType=0 ); /* IE6-9 */
 
 	/*Tweak Box Shadow to inset and add bottom lip highlight*/
-   	-moz-box-shadow:    	inset 0 .2em 1em #9F7609,
-   							0 .2em 0 #ffffff;
-   	-webkit-box-shadow: 	inset 0 .2em 1em #9F7609,
-   							0 .2em 0 #ffffff;
    	box-shadow:         	inset 0 .2em 1em #9F7609,
-   							0 .2em 0 #ffffff;
+   							0 .1em 0 #ffffff;
 
    	/*Text*/
    	color: #3F2A0C;
