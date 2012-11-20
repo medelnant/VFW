@@ -1,16 +1,30 @@
+/* ############################################################
+Term:       1212
+Author:     Michael Edelnant
+Project:    Project 2
+Course:     Visual Frameworks 1
+Instructor: Chad Gibson
+File Name:  global.css
+#############################################################*/
+
 /*Import Custom Fonts*/
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Oldenburg);
+@import url(https://fonts.googleapis.com/css?family=Oldenburg);
 
 
 body {
+
+	/*Generic Properties*/
+	background: url(../img/bgTexture.jpg) 0 0 repeat;
 	margin: .75em 0 0 0;
 	padding: 0;
+
+	/*Text*/
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 62.5%;
-	background: url(../img/bgTexture.jpg) 0 0 repeat;
+	font-size: 62.5%;	
 }
 
+/*Default link styling*/
 a, a:link, a:visited, a:hover {
 	color: #FCDA7F;
 	text-decoration: none;
@@ -46,16 +60,16 @@ header {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#f9b813',GradientType=0 ); /* IE6-9 */
 
 	/*Header Top & Bottom Borders*/
-	border-top: 3px solid #fff;
+	border-top: .3em solid #fff;
 
 	/*DropShadow border illusion
 		btmBlue Border
 		topBlue Border
 		veryTopWhite Border
 	*/
-	box-shadow: 0px .5em 0px rgb(77,82,95), 
-				0px -.5em 0px rgb(77,82,95),
-				0px -.75em 0px #fff;
+	box-shadow: 0 .5em 0 rgb(77,82,95), 
+				0 -.5em 0 rgb(77,82,95),
+				0 -.75em 0 #fff;
 
 	/*Padding*/
 	padding: 0 0 .25em 0;
@@ -73,7 +87,7 @@ header h1 {
 	color: rgb(77,82,95);
 
 	/*Text-Shadow*/
-	text-shadow: 0px 2px 0px #FFF58F;
+	text-shadow: 0 .1em 0 #FFF58F;
 
 	font-weight: normal;
 	margin: 0;
@@ -81,17 +95,15 @@ header h1 {
 }
 
 footer {
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid #ffffff;
-	font-size: 1.2em;
-	color: #FCDA7F;
-	box-shadow: 0px -.5em 0px #133859,
-				0px .5em 0px #133859,
-				0px .7em 0px #fff,
-				0px -10px 20px rgba(0, 0, 0, 0.3),
-				0px 10px 20px rgba(0, 0, 0, 0.3);
 				
+	/*Generic properties*/
 	padding: 1.5em 0;
+	border-top: .3em solid #fff;
+	border-bottom: .3em solid #ffffff;
+
+	/*Text*/
+	font-size: 1.2em;
+	color: #FCDA7F;	
 
 	/*Background*/
 	background: rgb(249,184,19); /* Old browsers */
@@ -104,7 +116,14 @@ footer {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9b813', endColorstr='#fceabb',GradientType=0 ); /* IE6-9 */
 
 	/*Margin Offset*/
-	margin: 0 0 .9em 0;	
+	margin: 0 0 .9em 0;
+
+	/*Shadows*/
+	box-shadow: 0 -.5em 0 #133859,
+				0 .5em 0 #133859,
+				0 .7em 0 #fff,
+				0 -1em 2em rgba(0, 0, 0, 0.3),
+				0 1em 2em rgba(0, 0, 0, 0.3);		
 
 }
 
@@ -112,11 +131,12 @@ footer a {
 	color: #FCDA7F;
 }
 
+/*MainContent Wrapper*/
 section#mainContent {
 	position: relative;
 	padding: 2em 2em 2em 1.5em;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid #fff;
+	border-top: .3em solid #fff;
+	border-bottom: .3em solid #fff;
 	margin: 0 0 .5em 0;
 	z-index: 2;
 }
@@ -147,7 +167,7 @@ form fieldset legend {
 	font-weight: normal;
 	font-size: 1.2em;
 	color: #FFF;
-	text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+	text-shadow: .1em .1em .1em rgba(0,0,0,.5);
 
 	/*Text Padding*/
 	padding: .5em 0;
@@ -163,12 +183,13 @@ form fieldset legend {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002a4f', endColorstr='#d1001c42',GradientType=0 ); /* IE6-9 */
 
 	/*Btm Border*/
-	border-bottom: 3px solid #fff;
+	border-bottom: .3em solid #fff;
 
 	/*Shadow*/
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
 }
 
+/*Add some stars before & after*/
 form fieldset legend span:before,
 form fieldset legend span:after
  { 
@@ -184,7 +205,7 @@ form fieldset h2 {
 	font-weight: bold;
 	font-size: 1.5em;
 	margin: 0 0 .25em 0;
-	text-shadow: 0px 1px 0px rgba(255,255,255,1);
+	text-shadow: 0 .1em 0 rgba(255,255,255,1);
 }
 
 /*Lets have a little fun with an icon for main parent labels*/
@@ -200,9 +221,10 @@ form fieldset .inlineLabelGroup label {
 }
 
 form fieldset .inlineLabelGroup {
+	/* Clear floats for child elements*/
 	overflow: hidden;
 }
-/*Float list-items next to one another : max of 3 across per percentage*/
+/*Float list-items next to one another : max of 2 across per percentage*/
 form fieldset .inlineLabelGroup ul li {
 	display: block;
 	width: 50%;
@@ -211,37 +233,57 @@ form fieldset .inlineLabelGroup ul li {
 
 
 /*Set percentage widths on most elements of the page*/
-form input[type="button"], 
 form fieldset input[type="text"],
 form fieldset input[type="range"],
 form fieldset input[type="date"],
 form fieldset select,
 form fieldset textarea{
+	
+	/*Generic Properties*/
 	width: 99%;
+	
+	/*Text*/
 	font-size: 1.5em;
 }
 
+/*Defaults for inputs & textareas*/
 form fieldset input[type="text"],
 form fieldset input[type="date"],
 form fieldset textarea {
+	
+	/*Generic Properties*/
 	padding: .5em 0 .5em .5em;
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-	border: 1px solid #ccc;	
+	border: .1em solid #ccc;
+
+	/*Shadows*/
+	box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.1);		
 }
 
+/*Focus states for inputs & textareas*/
 form fieldset input[type="text"]:focus,
 form fieldset input[type="date"]:focus,
 form fieldset textarea:focus {
-	border: 1px solid rgb(77,82,95);
-	box-shadow: 0px 0px 10px rgba(125, 170, 223, .75);
+
+	/*Generic Properties*/
+	border: .1em solid rgb(77,82,95);
+	
+	/*Remove default browser outline*/
 	outline: none;
+
+	/*Text*/
 	color: rgb(77,82,95);
+	
+	/*Shadows*/
+	box-shadow: 0 0 1em rgba(125, 170, 223, .75);	
 }
 
 form input[type="button"]{
+	
+	/*General Properties*/
+	width: 100%;
 	padding: .1em 0;
-	border: 1px solid #ccc;
-
+	border: .1em solid #ccc;
+	
 	/*Text*/
 	font-family: 'Oldenburg', cursive;
 	font-size: 2em;
@@ -258,17 +300,17 @@ form input[type="button"]{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fceabb', endColorstr='#fbdf93',GradientType=0 ); /* IE6-9 */
 
 	/*Shadows*/
-	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-	text-shadow: 0px 2px 0px #FFF58F;
+	box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.1);
+	text-shadow: 0 .1em 0 #FFF58F;
 
 	/*Cursor*/
 	cursor: pointer;
 
 	/*Border-radius*/
-	border-radius: 10px;
+	border-radius: 1em;
 
 	/*Border*/
-	border: 2px solid #9F7609;
+	border: .1em solid #9F7609;
 
 }
 
@@ -284,14 +326,14 @@ form input[type="button"]:hover {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#894c1c', endColorstr='#f8b500',GradientType=0 ); /* IE6-9 */
 
 	/*Tweak Box Shadow to inset and add bottom lip highlight*/
-   	-moz-box-shadow:    	inset 0 2px 10px #9F7609,
-   							0 2px 0 #ffffff;
-   	-webkit-box-shadow: 	inset 0 2px 10px #9F7609,
-   							0 2px 0 #ffffff;
-   	box-shadow:         	inset 0 2px 10px #9F7609,
-   							0 2px 0 #ffffff;
+   	-moz-box-shadow:    	inset 0 .2em 1em #9F7609,
+   							0 .2em 0 #ffffff;
+   	-webkit-box-shadow: 	inset 0 .2em 1em #9F7609,
+   							0 .2em 0 #ffffff;
+   	box-shadow:         	inset 0 .2em 1em #9F7609,
+   							0 .2em 0 #ffffff;
 
-   	/*Text-color*/
+   	/*Text*/
    	color: #3F2A0C;
 }
 
