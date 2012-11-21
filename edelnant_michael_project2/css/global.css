@@ -7,7 +7,7 @@ Instructor: Chad Gibson
 File Name:  global.css
 #############################################################*/
 
-/*Import Custom Fonts*/
+/*Import Custom Fonts w/ secure https */
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Oldenburg);
 
@@ -31,6 +31,39 @@ a, a:link, a:visited, a:hover {
 }
 a:hover {
 	text-decoration: underline;
+}
+
+/*Generic Button*/
+.gBtn {
+	
+	/*Generic Properties*/
+	display: block;
+	padding: .25em 0;
+	border-radius: 1em;
+	border: 2px solid #363D4F;
+	
+	/*Text*/
+	font-family: 'Oldenburg', cursive;
+	font-size: 1.25em;
+	text-shadow: 	0 -.15em 0 rgba(54,61,79,1);
+	color: #FFF2CF;
+	text-align: center;
+
+	/*Background*/
+	background: rgb(96,108,136); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(96,108,136,1) 21%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+
+}
+
+/*siteWidth with class modifier*/
+.gBtn.gFullWidth {
+	width: 100% !important;
 }
 
 /*Reset margins and padding on page elements*/
@@ -67,9 +100,10 @@ header {
 		topBlue Border
 		veryTopWhite Border
 	*/
-	box-shadow: 0 .5em 0 rgb(77,82,95), 
+	box-shadow: 0 .8em 0 rgb(77,82,95), 
 				0 -.5em 0 rgb(77,82,95),
-				0 -.75em 0 #fff;
+				0 -.75em 0 #fff,
+				0 1em 2em rgba(0, 0, 0, 0.3);				
 
 	/*Padding*/
 	padding: 0 0 .25em 0;
@@ -128,38 +162,12 @@ footer {
 
 }
 
-	footer a, 
-	footer a:link, 
-	footer a:visited {
-		
-		/*Generic Properties*/
-		display: block;
-		width: 47%;
-		padding: .25em 0;
-		border-radius: 1em;
-		border: 2px solid #363D4F;
-		
-		/*Text*/
-		font-family: 'Oldenburg', cursive;
-		font-size: 1.25em;
-		text-shadow: 	0 -.15em 0 rgba(54,61,79,1);
-		color: #FFF2CF;
 
-		/*Background*/
-		background: rgb(96,108,136); /* Old browsers */
-		background: -moz-linear-gradient(top,  rgba(96,108,136,1) 21%, rgba(63,76,107,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
-
-	}
-
+	footer a {width: 47%;}
 	footer a:first-child {float: left;}
 	footer a:last-child {float: right;}
 	footer a:hover {text-decoration: none;}
+
 
 /*MainContent Wrapper*/
 section#mainContent {
@@ -174,13 +182,51 @@ section#mainContent {
 	z-index: 2;
 }
 
+/*Custom Padding for Home Page*/
+section#mainContent.gHome {padding: 1em;}
+
+/*Home Page Paragraph Box*/
+section#mainContent.gHome p {
+	
+	/*Generic Properties*/
+	padding: 1em;
+	border: 1px solid #99A0AF;
+
+	/*Text*/
+	color: #6F747F;
+	font-size: 1.3em;
+	line-height: 1.5em;
+
+	/*Background*/
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 4%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(4%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 4%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 4%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 4%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 4%,rgba(255,255,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+	/*Shadows*/
+	box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.1);
+
+}
+
+/*CTA Banner Text*/
+section#mainContent.gHome h2 {
+	font-size: 2em;
+	color: #7F766F;
+	text-shadow: 0 .1em 0 rgba(255,255,255,1);
+	text-align: center;
+}
+	/* Add Plus Icon(Technically can be included in string but this is more fun) */
+	section#mainContent.gHome h2:before {content:" + ";}
 
 /*Remove bullets from list-items*/
 form ul li {
 	list-style: none;
 	margin: 0 0 1em 0;
 }
-
 
 /*Form styling*/
 form fieldset {
@@ -218,8 +264,7 @@ form fieldset legend {
 	/*Btm Border*/
 	border-bottom: .3em solid #fff;
 
-	/*Shadow*/
-	box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);
+
 }
 
 /*Add some stars before & after*/

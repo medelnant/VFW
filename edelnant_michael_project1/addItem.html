@@ -27,18 +27,18 @@ File Name:  addItem.html
         <section id="mainContent">
            <form action="#" method="post">
                <fieldset>
-                    <legend>Add a Recipe</legend>
+                    <legend><span>Enter your recipe information and save.</span></legend>
                     <ul>
                         <li>
-                            <label for="recipeTitle">Title :</label>
+                            <label for="recipeTitle"><span>Text Input :</span></label>
                             <input type="text" id="recipeTitle" placeholder="Title of your recipe" />
                         </li>
                         <li>
-                            <label for="recipeSummary">Quick Description:</label>
+                            <label for="recipeSummary"><span>Small Description :</span></label>
                             <input type="text" id="recipeSummary" placeholder="Quick description" />
                         </li>
                         <li>
-                            <label for="userLevel">Level :</label>
+                            <label for="userLevel"><span>Level :</span></label>
                             <select id="userLevel">
                                 <option value="Very Easy">Very Easy</option>
                                 <option value="Easy">Easy</option>
@@ -47,56 +47,57 @@ File Name:  addItem.html
                                 <option value="Very Hard">Very Hard</option>
                             </select>
                         </li>
-                        <li>
-                            Category Tags:
+                        <li class="inlineLabelGroup">
+                            <h2><span>Category Tags:</span></h2>
                             <ul>
                                 <li>
+                                    <input type="radio" name="recipeCat" id="cat_snack"/>                                    
+                                    <label for="cat_snack">&nbsp;Snack</label>
+                                </li>                                
+                                <li>
                                     <input type="radio" name="recipeCat" id="cat_appetizer"/>                                    
-                                    <label for="cat_appetizer">: Appetizer</label>
+                                    <label for="cat_appetizer">&nbsp;Appetizer</label>
                                 </li>
                                 <li>
                                     <input type="radio" name="recipeCat" id="cat_entree"/>                                     
-                                    <label for="cat_entree">: Entree</label>                                   
+                                    <label for="cat_entree">&nbsp;Entree</label>                                   
                                 </li>
                                 <li>
                                     <input type="radio" name="recipeCat" id="cat_dessert"/>
-                                    <label for="cat_dessert">: Dessert</label>                                    
+                                    <label for="cat_dessert">&nbsp;Dessert</label>                                    
                                 </li>
                                 <li>
                                     <input type="radio" name="recipeCat" id="cat_other"/> 
-                                    <label for="cat_other">: Other</label>
+                                    <label for="cat_other">&nbsp;Other</label>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <label for="chooseDate">Choose Date :</label>
+                            <label for="chooseDate"><span>Choose Date :</span></label>
                             <input type="date" name="chooseDate" id="chooseDate" />
                         </li>
                         <li>
-                            <label for="flavorRange">Flavor Range :</label>
+                            <label for="flavorRange"><span>Flavor Range :</span></label>
                             <input type="range" value="0" max="100" min="0" id="flavorRange" />
                         </li>
                         <li>
-                            <label for="ingredients">Ingredients :</label><br />
-                            <textarea name="ingredients" id="ingredients" cols="40" rows="5">
-                                
-                            </textarea>
+                            <label for="ingredients"><span>Ingredients :</span></label>
+                            <textarea name="ingredients" id="ingredients" ></textarea>
                         </li>                        
                         <li>
-                            <label for="directions">Directions :</label><br />
-                            <textarea name="directions" id="directions" cols="40" rows="5">
-                                
-                            </textarea>
+                            <label for="directions"><span>Directions :</span></label>
+                            <textarea name="directions" id="directions"></textarea>
                         </li>
                     </ul>
                </fieldset>
-               <a href="#">Clear Data</a>&nbsp;|&nbsp;
-               <a href="#">Display Data</a>&nbsp;|&nbsp;
                <input type="button" value="Save Recipe"/>
                <input type="hidden" name="Language" value="English" />
            </form>
         </section>
-        <footer>&copy; Visual Frameworks 1, 2012</footer>
+        <footer>
+           <a href="#" class="gBtn">Clear Data</a>
+           <a href="#" class="gBtn">Display Data</a>            
+        </footer>
 
         <!-- Include javascript -->
         <script src="js/functions.js"></script>
