@@ -476,6 +476,7 @@ ul#dataList li ul li {
 }
 ul#dataList li ul li span {
 	padding: 0;
+	display: inline;
 }
 
 
