@@ -126,8 +126,10 @@ header h1 {
 
 header h1 a,
 header h1 a:link,
-header h1 a:visited {
-	color: rgb(77,82,95);	
+header h1 a:visited,
+header h1 a:hover {
+	color: rgb(77,82,95);
+	text-decoration: none;	
 }
 
 footer {
