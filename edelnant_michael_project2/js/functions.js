@@ -6,13 +6,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	//Basic jSON pre-populated recipes
 	var recipeJSON = {
 		"62833302" : {
-		        "rTitle" : 			["Title:" , "Sho'nuff Sweet Potatoe Casserole"],
+		        "rTitle" : 			["Title:" , "Sho'nuff Sweet Potatoe Casserole Yo Mama Rocks"],
 		        "rDescription" : 	["Description:", "It's the bomb yo! Can't not have this at the dinner table!"],
 		        "rLevel" : 			["Level:", "Medium"],
 		        "rCategory" : 		["Category:", "Other"],
 		        "rDate" : 			["Date:", "2012-11-21"],
 		        "rFlavor" : 		["Flavor:", "50"],
-		        "rIngredients" : 	["Ingredients:", "Yams\nMarshmallows\nCinammon\nSugar"],
+		        "rIngredients" : 	["Ingredients:", "Yams\, Marshmallows\, Cinammon\, Sugar"],
 		        "rDirections" : 	["Directions:", "Look up another recipe!"]
 
 		} ,
@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		        "rCategory" : 		["Category:", "Dessert"],
 		        "rDate" : 			["Date:", "2012-11-21"],
 		        "rFlavor" : 		["Flavor:", "85"],
-		        "rIngredients" : 	["Ingredients:", "Pumpkin\nPie Crust\nWhipped Cream\nLove"],
+		        "rIngredients" : 	["Ingredients:", "Pumpkin\, Pie Crust\, Whipped Cream\, Love"],
 		        "rDirections" : 	["Directions:", "Mix it and bake it!"]  
 		}
 	};
