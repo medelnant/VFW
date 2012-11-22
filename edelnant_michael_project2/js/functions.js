@@ -155,6 +155,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 			//Define listItem
 			var listItem = document.createElement('li');
+			var listItemTitleWrapper = document.createElement('div');
 			var listItemTitle = document.createElement('h3');
 			var listItemDescription = document.createElement('span');
 			
@@ -184,8 +185,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			};
 			
 			//Build Main List Item by adding individual elements
-			listItem.appendChild(listItemTitle);
-			listItem.appendChild(listItemDescription);
+			listItemTitleWrapper.appendChild(listItemTitle);
+			listItemTitleWrapper.appendChild(listItemDescription);
+			listItem.appendChild(listItemTitleWrapper);
 			listItem.appendChild(listSubList);
 
 			//Append Each List Item

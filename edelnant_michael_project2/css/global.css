@@ -429,7 +429,6 @@ ul#dataList li {
 	list-style-type: none;
 	overflow: hidden;
 	margin: 0 0 1em 0;
-	padding: .5em 0;
 	border: 1px solid #99A0AF;
 
 	/*Text*/
@@ -450,21 +449,59 @@ ul#dataList li {
 	/*Shadows*/
 	box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.1);	
 }
-ul#dataList h3 {
-	padding: 0 .9em;
+
+/*List Item MastHead Container*/
+ul#dataList li div {
+	position: relative;
+	padding: .25em 1em .25em 3.25em;
+	border-bottom: .5em solid #FBD571;
+	line-height: 1.2em;
+
+	/*Background*/
+	background: rgb(96,108,136); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(96,108,136,1) 21%, rgba(63,76,107,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(21%,rgba(96,108,136,1)), color-stop(100%,rgba(63,76,107,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+
 }
-ul#dataList li span {
-	padding: 0 1em;
+
+ul#dataList li div:before {
+	content:" ♨ ";
+	position: absolute;
+	left: .25em;
+	top: .25em;
+	color: #0A0C0F;
+	font-size: 3em;
+	text-shadow: 0 .025em 0 rgba(255,255,255,.5);
+}
+
+ul#dataList li div h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #FBD571;
+	text-shadow: 0 -.1em 0 rgba(0,0,0,.5);	
+}
+ul#dataList li div span {
 	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	font-size: .9em;
+	color: #B5BECF;
+	font-style: italic;
+	text-shadow: 0 -.1em 0 rgba(0,0,0,.5);
 }
-
+/*SubList*/
 ul#dataList li ul {
-	border-top: 2px solid #ccc;
-	margin-top: .5em;
-	padding: .5em 1em 0 1em;
+	padding: .5em 1em .5em 1em;
 }
 ul#dataList li ul li {
 	margin: 0 0 0 0;
@@ -472,11 +509,14 @@ ul#dataList li ul li {
 	border: none;
 	background: transparent;
 	box-shadow: none;
-	font-size: .8em;
+	font-size: 1em;
+}
+
+ul#dataList li ul li:before {
+	content:" ⋅ ";
 }
 ul#dataList li ul li span {
 	padding: 0;
-	display: inline;
 }
 
 
