@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		
 		alert("Your recipe is saved! Keep em coming!");
 	};
-
+	
 	function getRadioValue(radioName) {
 		var radioGroup = document.getElementsByName(radioName);
 		var radioValue;
@@ -138,16 +138,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		//Define contentArea
 		var pageContainer = $('mainContent');
 		
-		//Define newComponent wrapper
-		var listSection = document.createElement('div');
-		listSection.setAttribute('id', 'dataList');
-		
 
 		//Define unordered list
 		var list = document.createElement('ul');
+		list.setAttribute('id', 'dataList');
 		
-		listSection.appendChild(list);
-		pageContainer.appendChild(listSection);	
+		pageContainer.appendChild(list);	
 
 		for(var i = 0, j=localStorage.length; i<j; i++ ){
 			
@@ -159,16 +155,42 @@ window.addEventListener("DOMContentLoaded", function(){
 
 			//Define listItem
 			var listItem = document.createElement('li');
+			var listItemTitle = document.createElement('h3');
+			var listItemDescription = document.createElement('span');
 			
-			//Print recipe title
-			listItem.innerHTML = storageObject.rTitle[1];
+			var listSubList = document.createElement('ul');
+
+			for(var key in storageObject) {
+				if(key === 'rTitle') {
+					listItemTitle.innerHTML = storageObject[key][1];
+				} else if (key === 'rDescription') {
+					listItemDescription.innerHTML = storageObject[key][1];
+				} else {
+					var subListItem = document.createElement('li');
+					var subListItemTitle = document.createElement('strong');
+					var subListItemValue = document.createElement('span');
+
+					//Print strings to corresponding elements
+					subListItemTitle.innerHTML = storageObject[key][0] + "&nbsp;";
+					subListItemValue.innerHTML = storageObject[key][1];
+
+					//Add elements to parent list item
+					subListItem.appendChild(subListItemTitle);
+					subListItem.appendChild(subListItemValue);					
+					
+					//Add subListItem to subList
+					listSubList.appendChild(subListItem);
+				};
+			};
 			
-			//Need to create sublist with item details to list out per itemTitle
+			//Build Main List Item by adding individual elements
+			listItem.appendChild(listItemTitle);
+			listItem.appendChild(listItemDescription);
+			listItem.appendChild(listSubList);
 
 			//Append Each List Item
 			list.appendChild(listItem);
-
-		} 	
+		}; 	
 
 		/*Toggle Screen & Buttons*/
 		toggleDisplay('dataDisplay');
