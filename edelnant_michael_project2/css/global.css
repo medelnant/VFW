@@ -455,6 +455,9 @@ ul#dataList h3 {
 }
 ul#dataList li span {
 	padding: 0 1em;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 ul#dataList li ul {
