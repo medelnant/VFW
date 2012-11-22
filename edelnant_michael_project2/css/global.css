@@ -475,13 +475,23 @@ ul#dataList li div {
 }
 
 ul#dataList li div:before {
+	
+	/*Generic Properties*/
 	content:" ♨ ";
+	display: block;
 	position: absolute;
+	overflow: hidden;
+	height: 1em;
+	width: 1em;	
 	left: .4em;
-	top: .5em;
+	top: .45em;
+	text-align: center;
+	
+	/*Text*/
 	color: #0A0C0F;
 	font-size: 1.75em;
 	text-shadow: 0 .075em 0 rgba(255,255,255,.5);
+	
 }
 
 ul#dataList li div h3 {
@@ -506,20 +516,27 @@ ul#dataList li div span {
 }
 /*SubList*/
 ul#dataList li ul {
-	padding: .5em 1em .5em 1em;
+	padding: .5em;
 }
 ul#dataList li ul li {
+	position: relative;
 	margin: 0 0 0 0;
-	padding: 0;
+	padding: 0 .5em 0 1em;
 	border: none;
 	background: transparent;
 	box-shadow: none;
 	font-size: 1em;
+	border-bottom: 1px dotted #ccc;
 }
 
 ul#dataList li ul li:before {
-	content:" ⋅ ";
+	content:" ♦ ";
+	color: #ccc;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
+ul#dataList li ul li:last-child {border: none;}
 ul#dataList li ul li span {
 	padding: 0;
 }
