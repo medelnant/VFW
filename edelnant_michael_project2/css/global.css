@@ -67,11 +67,10 @@ a:hover {
 }
 
 /*Reset margins and padding on page elements*/
-h1,h2,h3,
-ul, 
-ul li,
+h1,h2,h3,h4,h5,
+ul, li,
 fieldset,
-fieldset legend{
+legend{
 	margin: 0;
 	padding: 0;
 }
@@ -233,7 +232,9 @@ form fieldset {
 	border: none;
 	padding: 3em 0 0 0;
 }
+
 form fieldset legend {
+	
 	/*Change the Legend around to where I can make it full width*/
 	display: block;
 	width: 100%;
@@ -263,7 +264,6 @@ form fieldset legend {
 
 	/*Btm Border*/
 	border-bottom: .3em solid #fff;
-
 
 }
 
