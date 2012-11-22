@@ -472,11 +472,11 @@ ul#dataList li div {
 ul#dataList li div:before {
 	content:" ♨ ";
 	position: absolute;
-	left: .25em;
-	top: .25em;
+	left: .4em;
+	top: .5em;
 	color: #0A0C0F;
-	font-size: 3em;
-	text-shadow: 0 .025em 0 rgba(255,255,255,.5);
+	font-size: 1.75em;
+	text-shadow: 0 .075em 0 rgba(255,255,255,.5);
 }
 
 ul#dataList li div h3 {
