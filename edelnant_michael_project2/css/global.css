@@ -116,15 +116,18 @@ header h1 {
 	/*Text Size*/
 	font-size: 2.5em;
 
-	/*Text Color*/
-	color: rgb(77,82,95);
-
 	/*Text-Shadow*/
 	text-shadow: 0 .1em 0 #FFF58F;
 
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
+}
+
+header h1 a,
+header h1 a:link,
+header h1 a:visited {
+	color: rgb(77,82,95);	
 }
 
 footer {
