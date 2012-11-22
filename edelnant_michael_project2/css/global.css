@@ -458,6 +458,7 @@ ul#dataList li span {
 	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 ul#dataList li ul {
