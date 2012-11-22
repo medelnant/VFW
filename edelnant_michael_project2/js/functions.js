@@ -95,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		    	$('addRecipeForm').style.display = 'none';
 		    	
 		    	//Change label of btn
-		    	$('displayData').innerHTML = 'Add New Recipe';
+		    	$('displayData').innerHTML = 'Add Recipe';
 		
 		    	//Change Button Behavior
 		    	setTimeout(function(){
