@@ -403,27 +403,6 @@ form input[type="button"]{
 
 }
 
-form input[type="button"]:hover {
-	
-	/*Text*/
-   	color: #3F2A0C;
-	
-	/*Inverted background with increased top shadow*/
-	background: rgb(137,76,28); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(137,76,28,1) 0%, rgba(201,135,42,1) 17%, rgba(248,181,0,1) 61%, rgba(248,181,0,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137,76,28,1)), color-stop(17%,rgba(201,135,42,1)), color-stop(61%,rgba(248,181,0,1)), color-stop(100%,rgba(248,181,0,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(137,76,28,1) 0%,rgba(201,135,42,1) 17%,rgba(248,181,0,1) 61%,rgba(248,181,0,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#894c1c', endColorstr='#f8b500',GradientType=0 ); /* IE6-9 */
-
-	/*Tweak Box Shadow to inset and add bottom lip highlight*/
-   	box-shadow:		inset 0 .2em 1em #9F7609,
-   					0 .1em 0 #ffffff;
-
-}
-
 /* ############################################################
 Data List Styling
 ############################################################ */

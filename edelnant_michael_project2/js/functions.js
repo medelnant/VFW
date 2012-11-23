@@ -2,32 +2,7 @@
 
 
 window.addEventListener("DOMContentLoaded", function(){
-	
-	//Basic jSON pre-populated recipes
-	var recipeJSON = {
-		"62833302" : {
-		        "rTitle" : 			["Title:" , "Sho'nuff Sweet Potatoe Casserole Yo Mama Rocks"],
-		        "rDescription" : 	["Description:", "It's the bomb yo! Can't not have this at the dinner table!"],
-		        "rLevel" : 			["Level:", "Medium"],
-		        "rCategory" : 		["Category:", "Other"],
-		        "rDate" : 			["Date:", "2012-11-21"],
-		        "rFlavor" : 		["Flavor:", "50"],
-		        "rIngredients" : 	["Ingredients:", "Yams\, Marshmallows\, Cinammon\, Sugar"],
-		        "rDirections" : 	["Directions:", "Look up another recipe!"]
 
-		} ,
-		"89174667" : {
-		        "rTitle" : 			["Title:" , "Worlds Best Pumpkin Pie"],
-		        "rDescription" : 	["Description:", "You've never tasted anything better!"],
-		        "rLevel" : 			["Level:", "Easy"],
-		        "rCategory" : 		["Category:", "Dessert"],
-		        "rDate" : 			["Date:", "2012-11-21"],
-		        "rFlavor" : 		["Flavor:", "85"],
-		        "rIngredients" : 	["Ingredients:", "Pumpkin\, Pie Crust\, Whipped Cream\, Love"],
-		        "rDirections" : 	["Directions:", "Mix it and bake it!"]  
-		}
-	};
-	
 	//Get Element By ID Function
 	function $(x){	
 		var e = document.getElementById(x);
@@ -37,7 +12,6 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	//Save Data Function	
 	function saveData(){
-		
 		//Random Key
 		var key = Math.floor(Math.random()*100000001);
 
@@ -87,8 +61,6 @@ window.addEventListener("DOMContentLoaded", function(){
 	};
 
 	function toggleDisplay(argBool) {
-	    console.log("Hello");
-
 	    switch(argBool){
 		    case 'dataDisplay':
 		    	//Hide Form
@@ -100,7 +72,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		    	//Change Button Behavior
 		    	setTimeout(function(){
 		    		$('displayData').href = 'addItem.html'								// Change href
-		    		$('displayData').removeEventListener('click', displayData)},10);	// Remove function binding
+		    		$('displayData').removeEventListener('click', buildDataList)},10);	// Remove function binding
 		    	break;
 	    	case 'dataEntry':
 	    		
@@ -127,7 +99,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	};
 
-	function displayData() {
+	function buildDataList() {
 		
 		//If no data, pre-populate with JSON
 		if (!localStorage.length) {
@@ -199,6 +171,10 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	};
 
+	function buildLinks() {
+
+	}
+
 	function prePopList(data) {
 		//Loop through JSON data and store in local storage
 	    for ( var key in data) {
@@ -245,7 +221,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 		//Bind Functions
 		saveRecipe.addEventListener('click', saveData);
-		displayDataBtn.addEventListener('click', displayData);
+		displayDataBtn.addEventListener('click', buildDataList);
 		clearLocalDataBtn.addEventListener('click', clearLocalData);
 	
 });
