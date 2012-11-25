@@ -298,10 +298,13 @@ form fieldset h2 {
 }
 
 /*Lets have a little fun with an icon for main parent labels*/
-form fieldset label span:before,
-form fieldset h2 span:before {
+form fieldset label:before,
+form fieldset h2:before {
 	content:" ♨ ";
 	color: #837D79;
+}
+form fieldset .inlineLabelGroup ul li label:before {
+	content: "";
 }
 
 /*Special Case for Radios and Checkboxes via .inlineLabelGroup class*/
@@ -406,6 +409,7 @@ form input[type="button"]{
 /* ############################################################
 Data List Styling
 ############################################################ */
+
 
 ul#dataList li {
 	display: block;
@@ -518,6 +522,20 @@ ul#dataList li ul li:before {
 ul#dataList li ul li:last-child {border: none;}
 ul#dataList li ul li span {
 	padding: 0;
+}
+
+/*Animation*/
+.fade {
+ 	opacity: 0;
+	-webkit-transition: opacity 1s ease;  
+    -moz-transition: opacity 1s ease;  
+    -o-transition: opacity 1s ease;  
+    -ms-transition: opacity 1s ease;  
+    transition: opacity 1s ease;  
+
+}
+.fadeIn {
+	opacity: 1;
 }
 
 

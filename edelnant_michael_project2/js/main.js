@@ -145,6 +145,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		//Define unordered list
 		var list = document.createElement('ul');
 		list.setAttribute('id', 'dataList');
+		list.className = 'fade';
 		
 		//Add list to container
 		pageContainer.appendChild(list);	
@@ -155,8 +156,8 @@ window.addEventListener("DOMContentLoaded", function (){
 			//Define key per loopIndex
 			var storageKey = localStorage.key(i);
 
-			//Convert item back to object
-			var storageObject = JSON.parse(localStorage[storageKey]);
+			//Convert localStorage item back to object
+			var storageObject = JSON.parse(localStorage.getItem(storageKey));
 
 			//Define listItem
 			var listItem = document.createElement('li');
@@ -202,6 +203,9 @@ window.addEventListener("DOMContentLoaded", function (){
 
 		/*Toggle Screen & Buttons*/
 		toggleDisplay('dataDisplay');
+		setTimeout(function() {
+    		list.className = 'fade fadeIn';
+		}, 50);
 
 	};
 
