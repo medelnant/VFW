@@ -106,17 +106,21 @@ window.addEventListener("DOMContentLoaded", function (){
 		    		$('displayData').removeEventListener('click', buildDataList)},10);	// Remove function binding
 		    	break;
 	    	case 'dataEntry':
-
+	    		var pageContainer = $('mainContent');
+	    		var dataList = $('dataList');
+	  			mainContent.removeChild(dataList);
 	    		//Show Form
 	    		$('addRecipeForm').style.display = 'block';
-	    		list.className = 'fade';
+	    		
 	    		
 	    		//Change href back to "#"
 	    		$('displayData').href = '#';
 
 		    	break;
 	    	case 'updateEntry':
-	    		list.className ='fade';
+	    		var pageContainer = $('mainContent');
+	    		var dataList = $('dataList');
+	  			mainContent.removeChild(dataList);
 	    		//Show Form
 	    		$('addRecipeForm').style.display = 'block';
 	    		
@@ -231,7 +235,9 @@ window.addEventListener("DOMContentLoaded", function (){
             //If Confirmed, follow through.
             if(confirmListDelete === true) {
             	localStorage.clear();
-            	$('dataList').innerHTML = "";
+	    		var pageContainer = $('mainContent');
+	    		var dataList = $('dataList');
+	  			mainContent.removeChild(dataList);            	
             	alert("All recipes have been deleted!");
         	}
 
