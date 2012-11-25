@@ -32,25 +32,20 @@ File Name:  addItem.html
                     <legend><span>Enter your recipe information and save.</span></legend>
                     <ul>
                         <li>
-                            <label for="recipeTitle"><span>Text Input :</span></label>
+                            <label for="recipeTitle">Text Input :</label>
                             <input type="text" id="recipeTitle" placeholder="Title of your recipe" />
                         </li>
                         <li>
-                            <label for="recipeSummary"><span>Small Description :</span></label>
+                            <label for="recipeSummary">Small Description :</label>
                             <input type="text" id="recipeSummary" placeholder="Quick description" />
                         </li>
-                        <li>
-                            <label for="userLevel"><span>Level :</span></label>
-                            <select id="userLevel">
-                                <option value="Very Easy">Very Easy</option>
-                                <option value="Easy">Easy</option>
-                                <option value="Medium">Medium</option>
-                                <option value="Hard">Hard</option>
-                                <option value="Very Hard">Very Hard</option>
-                            </select>
+                        <li id="chooseDifficulty">
+                            <!-- ################################
+                            Dynamically add Select Dropdown 
+                            ################################# -->
                         </li>
                         <li class="inlineLabelGroup">
-                            <h2><span>Category:</span></h2>
+                            <h2>Category:</h2>
                             <ul>
                                 <li>
                                     <input type="radio" name="recipeCat" id="cat_snack" value="Snack"/>                                    
@@ -75,19 +70,19 @@ File Name:  addItem.html
                             </ul>
                         </li>
                         <li>
-                            <label for="chooseDate"><span>Choose Date :</span></label>
+                            <label for="chooseDate">Choose Date :</label>
                             <input type="date" name="chooseDate" id="chooseDate" />
                         </li>
                         <li>
-                            <label for="flavorRange"><span>Flavor Range :</span></label>
+                            <label for="flavorRange">Flavor Range :</label>
                             <input type="range" value="0" max="100" min="0" id="flavorRange" />
                         </li>
                         <li>
-                            <label for="ingredients"><span>Ingredients :</span></label>
+                            <label for="ingredients">Ingredients :</label>
                             <textarea name="ingredients" id="ingredients" ></textarea>
                         </li>                        
                         <li>
-                            <label for="directions"><span>Directions :</span></label>
+                            <label for="directions">Directions :</label>
                             <textarea name="directions" id="directions"></textarea>
                         </li>
                     </ul>
@@ -103,6 +98,6 @@ File Name:  addItem.html
 
         <!-- Include javascript -->
         <script src="js/recipeJSON.js"></script>
-        <script src="js/functions.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
