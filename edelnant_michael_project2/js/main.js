@@ -109,13 +109,14 @@ window.addEventListener("DOMContentLoaded", function (){
 
 	    		//Show Form
 	    		$('addRecipeForm').style.display = 'block';
+	    		list.className = 'fade';
 	    		
 	    		//Change href back to "#"
 	    		$('displayData').href = '#';
 
 		    	break;
 	    	case 'updateEntry':
-	    		
+	    		list.className ='fade';
 	    		//Show Form
 	    		$('addRecipeForm').style.display = 'block';
 	    		
