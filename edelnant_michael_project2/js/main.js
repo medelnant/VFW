@@ -210,7 +210,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		toggleDisplay('dataDisplay');
 		setTimeout(function() {
     		list.className = 'fade fadeIn';
-		}, 250);
+		}, 50);
 
 	};
 

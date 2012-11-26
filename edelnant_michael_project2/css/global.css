@@ -270,6 +270,9 @@ form fieldset legend {
 	/*Btm Border*/
 	border-bottom: .3em solid #fff;
 
+	/*Box-Shadow*/
+	box-shadow: 0 1em 2em rgba(0, 0, 0, 0.3);	
+
 }
 
 /*Add some stars before & after*/
@@ -527,12 +530,11 @@ ul#dataList li ul li span {
 /*Animation*/
 .fade {
  	opacity: 0;
-	-webkit-transition: opacity 1s ease;  
-    -moz-transition: opacity 1s ease;  
-    -o-transition: opacity 1s ease;  
-    -ms-transition: opacity 1s ease;  
-    transition: opacity 1s ease;  
-
+-webkit-transition: all 1s cubic-bezier(0.390, 0.575, 0.565, 1.000); 
+   -moz-transition: all 1s cubic-bezier(0.390, 0.575, 0.565, 1.000); 
+    -ms-transition: all 1s cubic-bezier(0.390, 0.575, 0.565, 1.000); 
+     -o-transition: all 1s cubic-bezier(0.390, 0.575, 0.565, 1.000); 
+        transition: all 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 .fadeIn {
 	opacity: 1;
