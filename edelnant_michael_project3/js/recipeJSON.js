@@ -10,7 +10,7 @@
 		"62833302" : {
 		        "rTitle" : 			["Title:" , "Sho'nuff Sweet Potatoe Casserole Yo Mama Rocks"],
 		        "rDescription" : 	["Description:", "It's the bomb yo! Can't not have this at the dinner table!"],
-		        "rLevel" : 			["Level:", "Medium"],
+		        "rDifficulty" : 	["Difficulty:", "Medium"],
 		        "rCategory" : 		["Category:", "Other"],
 		        "rDate" : 			["Date:", "2012-11-21"],
 		        "rFlavor" : 		["Flavor:", "50"],
@@ -21,7 +21,7 @@
 		"89174667" : {
 		        "rTitle" : 			["Title:" , "Worlds Best Pumpkin Pie"],
 		        "rDescription" : 	["Description:", "You've never tasted anything better!"],
-		        "rLevel" : 			["Level:", "Easy"],
+		        "rDifficulty" : 	["Level:", "Easy"],
 		        "rCategory" : 		["Category:", "Dessert"],
 		        "rDate" : 			["Date:", "2012-11-21"],
 		        "rFlavor" : 		["Flavor:", "85"],

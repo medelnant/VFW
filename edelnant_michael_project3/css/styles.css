@@ -7,7 +7,6 @@ Instructor: Chad Gibson
 Project 2 | global.css
 --------------------------------------------------------------------------- */
 
-/*Import Custom Fonts w/ secure https */
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import url(https://fonts.googleapis.com/css?family=Oldenburg);
 
@@ -526,6 +525,12 @@ ul#dataList li ul li:last-child {border: none;}
 ul#dataList li ul li span {
 	padding: 0;
 }
+
+ul#dataList li p {padding: 1em 1em 0 1em;overflow: hidden; border-top: 1px solid #ccc;}
+ul#dataList li p a {width: 47%;}
+ul#dataList li p a:first-child {float: left;}
+ul#dataList li p a:last-child {float: right;}
+ul#dataList li p a:hover {text-decoration: none;}
 
 /*Animation*/
 .fade {
