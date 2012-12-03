@@ -3,7 +3,7 @@
 // Course: VFW 1212
 // Instructor: Chad Gibson
 // --------------------------------------------------------------------------- /
-// Project 2 | Main.js
+// Project 3 | Main.js
 // --------------------------------------------------------------------------- /
 
 
@@ -20,12 +20,13 @@ window.addEventListener("DOMContentLoaded", function (){
 		
 		//Build Label
 		var difficultyLabel = document.createElement('label');
-		difficultyLabel.innerHTML = argLabel + ":";
+		difficultyLabel.innerHTML = argLabel + ":&nbsp;<em>*</em>";
 		
 
 		//Build Select
 		var selectElement = document.createElement('select');
 		selectElement.setAttribute('id', 'userDifficulty');
+		selectElement.setAttribute('class','gRequired');
 		for(var i=0; i< argArray.length; i++) {
 			var optionElement = document.createElement('option');
 			optionElement.setAttribute('value', argArray[i]);
@@ -34,14 +35,19 @@ window.addEventListener("DOMContentLoaded", function (){
 		};
 
 		//Append to specified element
-		$(argLocation).appendChild(difficultyLabel); 
+		$(argLocation).appendChild(difficultyLabel);
 		$(argLocation).appendChild(selectElement);
 	};
 
 	//Save Data Function	
-	function saveData(){
-		//Random Key
-		var key = Math.floor(Math.random()*100000001);
+	function saveData(passedKey){
+		if(!passedKey) {
+			//Random Key
+			var key = Math.floor(Math.random()*100000001);
+		} else {
+			key = passedKey;
+		};
+
 
 		var recipe 					= {};
 			recipe.rTitle 			= ["Title:", $("recipeTitle").value];
@@ -250,7 +256,6 @@ window.addEventListener("DOMContentLoaded", function (){
 	function prePopList(data) {
 		//Loop through JSON data and store in local storage
 	    for ( var key in data) {
-	    	console.log("Object " + key);
 	        localStorage.setItem(key, JSON.stringify(data[key]));
 	    };		
 	};
@@ -316,12 +321,74 @@ window.addEventListener("DOMContentLoaded", function (){
 	
 
 	function deleteListItem(){
-
+		var verify = confirm('Are you sure you want to delete this recipe?')
+		if(verify) {
+			localStorage.removeItem(this.key);
+			alert("Recipe has been deleted");
+			window.location.reload();
+		} else {
+			alert('Recipe was not deleted');
+		};
 	};
 
-	function validateRecipe() {
-		alert("Boom!");
-	}
+	function validateRecipe(e) {
+		var reqElements = document.getElementsByClassName('gRequired');
+		
+		//Reset Error
+		errorBox.innerHTML = '';
+		errorArray = [];
+
+		console.log(reqElements.length);
+		for(var i = 0; i < reqElements.length; i++) {
+			//Start out by removing any pre-existing error classes / reset
+			//This is mainly for re-validation
+			reqElements[i].className = 'gRequired';
+			//Test value string OR match first option string for select
+			if((reqElements[i].value === "") || (reqElements[i].value === "-- Choose a Difficulty --")) {
+				//set class on element.
+				//Isn't it best practice to keep all styles and presentation within
+				//the external CSS files? Having JS handle presentation defeats the
+				//purpose, doesn't it? This is why I chose to append a class.
+				reqElements[i].className += ' error';
+
+				switch(reqElements[i].id){
+				    case 'recipeTitle':
+				    	errorArray.push('Please provide a title.');
+				    	break;
+			    	case 'recipeSummary':
+			    		errorArray.push('Please provide a small description.');
+				    	break;
+			    	case 'userDifficulty':
+			    		errorArray.push('Please select a difficulty level.');
+				    	break;
+			    	case 'ingredients':
+			    		errorArray.push('Please provide ingredients.');
+				    	break;
+			    	case 'directions':
+			    		errorArray.push('Please provide instructions.');
+				    	break;				    	
+			    	default:
+		            
+		            return false;
+				};
+			};
+		};
+		
+		//Handle errorBox messages via errorArray.
+		if(errorArray.length > 0) {
+			for(i = 0; i < errorArray.length; i++) {
+				var errorListItem = document.createElement('li');
+				errorListItem.innerHTML = errorArray[i];
+				errorBox.appendChild(errorListItem);
+			};
+			e.preventDefault();
+			return false;			
+		} else {
+			saveData(this.key);
+		}
+
+
+	};
 
 	//User Initiated Delete Local Storage. Using confirmBox.
 	function clearLocalData(){
@@ -356,6 +423,12 @@ window.addEventListener("DOMContentLoaded", function (){
 		$("ingredients").value 		= ""
 		$("directions").value 		= ""
 		$('submitForm').value 		='Save Recipe';
+
+		//Remove Error Styling and Clear Error Report
+		var reqElements = document.getElementsByClassName('gRequired');
+		for(i = 0; i < reqElements.length; i ++) {
+			reqElements[i].className = 'gRequired';
+		}
 	};
 
 
@@ -363,14 +436,16 @@ window.addEventListener("DOMContentLoaded", function (){
 		var saveRecipe 			= $('submitForm');
 		var displayDataBtn 		= $('displayData');
 		var clearLocalDataBtn 	= $('clearData');
+		var errorBox			= $('errorBox');
 		var btnListener 		= true;	
 		
 	//Define array for select
-	var difficultyArray = ['Very Easy', 'Easy', 'Medium', 'Hard', 'Very Hard'];
+	var difficultyArray = ['-- Choose a Difficulty --','Very Easy', 'Easy', 'Medium', 'Hard', 'Very Hard'];
+	var errorArray = [];
 
 
 	//Bind Functions
-	saveRecipe.addEventListener('click', saveData);
+	saveRecipe.addEventListener('click', validateRecipe);
 	displayDataBtn.addEventListener('click', buildDataList);
 	clearLocalDataBtn.addEventListener('click', clearLocalData);
 

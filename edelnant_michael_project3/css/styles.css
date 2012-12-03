@@ -4,7 +4,7 @@ School: Full Sail University
 Course: VFW 1212
 Instructor: Chad Gibson
 ---------------------------------------------------------------------------
-Project 2 | global.css
+Project 3 | global.css
 --------------------------------------------------------------------------- */
 
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
@@ -546,4 +546,5 @@ ul#dataList li p a:hover {text-decoration: none;}
 }
 
 
+.error {border: 1px solid red !important;}
 
