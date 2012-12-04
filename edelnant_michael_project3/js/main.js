@@ -107,8 +107,9 @@ window.addEventListener("DOMContentLoaded", function (){
 	function toggleDisplay(argBool) {
 	    switch(argBool){
 		    case 'dataDisplay':
-		    	//Hide Form
+		    	//Hide Form & reset
 		    	$('addRecipeForm').style.display = 'none';
+		    	resetForm();
 		    	
 		    	//Change label of btn
 		    	$('displayData').innerHTML = 'Add Recipe';
@@ -376,11 +377,13 @@ window.addEventListener("DOMContentLoaded", function (){
 		
 		//Handle errorBox messages via errorArray.
 		if(errorArray.length > 0) {
+			errorBox.style.display = 'block';
 			for(i = 0; i < errorArray.length; i++) {
 				var errorListItem = document.createElement('li');
 				errorListItem.innerHTML = errorArray[i];
 				errorBox.appendChild(errorListItem);
 			};
+			window.scrollTo(0,0);
 			e.preventDefault();
 			return false;			
 		} else {
@@ -429,6 +432,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		for(i = 0; i < reqElements.length; i ++) {
 			reqElements[i].className = 'gRequired';
 		}
+		errorBox.style.display = 'none';
 	};
 
 

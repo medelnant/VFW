@@ -331,7 +331,7 @@ form fieldset input[type="text"],
 form fieldset input[type="range"],
 form fieldset input[type="date"],
 form fieldset select,
-form fieldset textarea{
+form fieldset textarea {
 	
 	/*Generic Properties*/
 	width: 99%;
@@ -408,6 +408,10 @@ form input[type="button"]{
 
 }
 
+form fieldset textarea {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 /* ############################################################
 Data List Styling
 ############################################################ */
@@ -456,6 +460,9 @@ ul#dataList li div {
 	background: -ms-linear-gradient(top,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  rgba(96,108,136,1) 21%,rgba(63,76,107,1) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#606c88', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
+
+	box-shadow: 	0 .15em 0 #fff,
+					0 .2em .5em rgba(0, 0, 0, 0.1);
 
 }
 
@@ -546,5 +553,38 @@ ul#dataList li p a:hover {text-decoration: none;}
 }
 
 
-.error {border: 1px solid red !important;}
+/*Error Styling*/
+.error,
+.error[type="text"] {border: 1px solid #CF2219 !important; box-shadow: 0 0 1em rgba(175, 54, 54, .25);}
+
+.error:focus,
+.error[type="text"]:focus {box-shadow: 0 0 1em rgba(175, 54, 54, .45);}
+
+.error::-webkit-input-placeholder{color: #AF2020;}
+.error:-moz-placeholder {color: #AF2020;}
+
+/*Error Box*/
+form #errorBox {
+	background: #ff3019; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	margin: 0 0 1em 0;
+	box-shadow: 0 .1em .5em rgba(0, 0, 0, 0.5);
+	border: 2px solid #CF2219;
+	border-radius: .5em;
+	display: none;
+	padding: 1em;
+}
+form #errorBox li {
+	text-shadow: 	0 .15em .15em #AF1C15;
+	font-size: 1.4em;
+}
+form #errorBox li:last-child {margin: 0;}
+
 
