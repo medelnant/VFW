@@ -318,6 +318,10 @@ form fieldset .inlineLabelGroup {
 	/* Clear floats for child elements*/
 	overflow: hidden;
 }
+form fieldset .inlineLabelGroup ul {
+	overflow: hidden;
+	padding: 1em;
+}
 /*Float list-items next to one another : max of 2 across per percentage*/
 form fieldset .inlineLabelGroup ul li {
 	display: block;
@@ -557,8 +561,10 @@ ul#dataList li p a:hover {text-decoration: none;}
 .error,
 .error[type="text"] {border: 1px solid #CF2219 !important; box-shadow: 0 0 1em rgba(175, 54, 54, .25);}
 
+#subList.error {background: rgba(255,255,255,.45);}
+
 .error:focus,
-.error[type="text"]:focus {box-shadow: 0 0 1em rgba(175, 54, 54, .45);}
+.error[type="text"]:focus {box-shadow: 0 0 1em rgba(175, 54, 54, .25);}
 
 .error::-webkit-input-placeholder{color: #AF2020;}
 .error:-moz-placeholder {color: #AF2020;}

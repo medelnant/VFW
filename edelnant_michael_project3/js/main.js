@@ -104,12 +104,26 @@ window.addEventListener("DOMContentLoaded", function (){
    		return radioValue;
 	};
 
+	function checkRadio(radioName) {
+		var radioGroup = document.getElementsByName(radioName);
+		var radioValue;
+		for (var i=0; i < radioGroup.length; i++){
+   			//console.log(radioGroup[i].value);
+   			if (radioGroup[i].checked) {
+ 				return true
+      		} else {
+      			return false;
+      		}
+   		};
+	}
+
 	function toggleDisplay(argBool) {
 	    switch(argBool){
 		    case 'dataDisplay':
 		    	//Hide Form & reset
-		    	$('addRecipeForm').style.display = 'none';
 		    	resetForm();
+		    	$('addRecipeForm').style.display = 'none';
+
 		    	
 		    	//Change label of btn
 		    	$('displayData').innerHTML = 'Add Recipe';
@@ -314,7 +328,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		//Store Btn within new variable
 		var updateRecipe = $('submitForm');
 		
-		//Moduft attributes and bind validateRecipe function w/ new EventListener.
+		//Modify attributes and bind validateRecipe function w/ new EventListener.
 		updateRecipe.value = 'Update Recipe';
 		updateRecipe.addEventListener('click', validateRecipe);
 		updateRecipe.key = this.key;
@@ -375,6 +389,21 @@ window.addEventListener("DOMContentLoaded", function (){
 			};
 		};
 		
+		if(!checkRadio('recipeCat')) {
+			radioList = document.getElementById('subList');
+			
+			//Add the class of error
+			radioList.className += 'error'
+			
+			//Hoky order fix to have error messages show in sequential order.
+			//Insert category error msg
+			if(errorArray.length > 3) {
+				errorArray.splice(3, 0, "Please provide a category.");
+			} else {
+				errorArray.push('Please provide a category.');
+			};
+		}
+
 		//Handle errorBox messages via errorArray.
 		if(errorArray.length > 0) {
 			errorBox.style.display = 'block';
@@ -415,9 +444,22 @@ window.addEventListener("DOMContentLoaded", function (){
 	//Clear form after submit. Eventually will only be called 
 	//if validation is succesful
 	function resetForm() {
+		radioList = document.getElementById('subList');	
+		errorBox.style.display = 'none';
+		//remove class of error
+		radioList.className = '';
+
+
+		//Remove Error Styling and Clear Error Report
+		var reqElements = document.getElementsByClassName('gRequired');
+		for(i = 0; i < reqElements.length; i ++) {
+			reqElements[i].className = 'gRequired';
+		}
+		
+
+
 		// Zero out all values for new recipe entry 
 		clearRadioValue('recipeCat');
-
 		$("recipeTitle").value 		= ""
 		$("recipeSummary").value 	= ""
 		$("userDifficulty").value 	= ""
@@ -426,13 +468,6 @@ window.addEventListener("DOMContentLoaded", function (){
 		$("ingredients").value 		= ""
 		$("directions").value 		= ""
 		$('submitForm').value 		='Save Recipe';
-
-		//Remove Error Styling and Clear Error Report
-		var reqElements = document.getElementsByClassName('gRequired');
-		for(i = 0; i < reqElements.length; i ++) {
-			reqElements[i].className = 'gRequired';
-		}
-		errorBox.style.display = 'none';
 	};
 
 
