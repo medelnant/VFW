@@ -34,13 +34,13 @@ a:hover {
 
 /*Generic Button*/
 .gBtn {
-	
+
 	/*Generic Properties*/
 	display: block;
 	padding: .25em 0;
 	border-radius: 1em;
 	border: 2px solid #363D4F;
-	
+
 	/*Text*/
 	font-family: 'Oldenburg', cursive;
 	font-size: 1.25em;
@@ -132,7 +132,7 @@ header h1 a:hover {
 }
 
 footer {
-				
+
 	/*Generic properties*/
 	padding: 1.5em 1.5em;
 	border-top: .3em solid #fff;
@@ -175,10 +175,10 @@ footer {
 /*MainContent Wrapper*/
 section#mainContent {
 	position: relative;
-	
+
 	padding: 2em 2em 2em 1.5em;
 	margin: 0 0 .5em 0;
-	
+
 	border-top: .3em solid #fff;
 	border-bottom: .3em solid #fff;
 
@@ -190,7 +190,7 @@ section#mainContent.gHome {padding: 1em;}
 
 /*Home Page Paragraph Box*/
 section#mainContent.gHome p {
-	
+
 	/*Generic Properties*/
 	padding: 1em;
 	border: 1px solid #99A0AF;
@@ -238,7 +238,7 @@ form fieldset {
 }
 
 form fieldset legend {
-	
+
 	/*Change the Legend around to where I can make it full width*/
 	display: block;
 	width: 100%;
@@ -285,7 +285,7 @@ form fieldset legend span:after
 /*Style Default Labels*/
 form fieldset label,
 form fieldset h2 {
-	
+
 	/*Generic Properties*/
 	display: block;
 	margin: 0 0 .25em 0;
@@ -336,10 +336,10 @@ form fieldset input[type="range"],
 form fieldset input[type="date"],
 form fieldset select,
 form fieldset textarea {
-	
+
 	/*Generic Properties*/
 	width: 99%;
-	
+
 	/*Text*/
 	font-size: 1.5em;
 }
@@ -348,7 +348,7 @@ form fieldset textarea {
 form fieldset input[type="text"],
 form fieldset input[type="date"],
 form fieldset textarea {
-	
+
 	/*Generic Properties*/
 	padding: .5em 0 .5em .5em;
 	border: .1em solid #ccc;
@@ -364,24 +364,24 @@ form fieldset textarea:focus {
 
 	/*Generic Properties*/
 	border: .1em solid rgb(77,82,95);
-	
+
 	/*Remove default browser outline*/
 	outline: none;
 
 	/*Text*/
 	color: rgb(77,82,95);
-	
+
 	/*Shadows*/
 	box-shadow: 0 0 1em rgba(125, 170, 223, .75);	
 }
 
 form input[type="button"]{
-	
+
 	/*General Properties*/
 	width: 100%;
 	padding: .1em 0;
 	border: .1em solid #ccc;
-	
+
 	/*Text*/
 	font-family: 'Oldenburg', cursive;
 	font-size: 2em;
@@ -471,7 +471,7 @@ ul#dataList li div {
 }
 
 ul#dataList li div:before {
-	
+
 	/*Generic Properties*/
 	content:" ♨ ";
 	display: block;
@@ -482,12 +482,12 @@ ul#dataList li div:before {
 	left: .4em;
 	top: .45em;
 	text-align: center;
-	
+
 	/*Text*/
 	color: #0A0C0F;
 	font-size: 1.75em;
 	text-shadow: 0 .075em 0 rgba(255,255,255,.5);
-	
+
 }
 
 ul#dataList li div h3 {
@@ -592,5 +592,4 @@ form #errorBox li {
 	font-size: 1.4em;
 }
 form #errorBox li:last-child {margin: 0;}
-
 
