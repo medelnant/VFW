@@ -175,7 +175,7 @@ window.addEventListener("DOMContentLoaded", function (){
     		ingredientInput.className = 'gIngredient fade fadeIn';
 		}, 50);
 
-		return false;	
+		e.preventDefault();	
 	};
 
 	function removeIngredient(e) {
@@ -185,7 +185,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		thisElement = document.getElementById(uniqueKey);
 		thisElement.parentNode.removeChild(thisElement);
 
-		return false;
+		e.preventDefault();
 	};
 
 	function toggleDisplay(argBool) {
