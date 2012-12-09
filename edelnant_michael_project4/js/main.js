@@ -3,7 +3,7 @@
 // Course: VFW 1212
 // Instructor: Chad Gibson
 // --------------------------------------------------------------------------- /
-// Project 3 | Main.js
+// Project 4 | Main.js
 // --------------------------------------------------------------------------- /
 
 
@@ -47,7 +47,21 @@ window.addEventListener("DOMContentLoaded", function (){
 		} else {
 			key = passedKey;
 		};
-
+		
+		//Individual Ingredient Addition
+		var ingredientsArray = []; 
+		
+		//Find all elements w/ classname gIngredient
+		ingredients = document.getElementsByClassName('gIngredient');	
+		
+		//Loop through elements returned
+		for(i=0; i < ingredients.length; i++) {
+			//If value = to '' don't bother storing it
+			if(ingredients[i].value != '') {
+				// else push value to array
+				ingredientsArray.push(ingredients[i].value);
+			};
+		};
 
 		var recipe 					= {};
 			recipe.rTitle 			= ["Title:", $("recipeTitle").value];
@@ -56,12 +70,11 @@ window.addEventListener("DOMContentLoaded", function (){
 			recipe.rCategory 		= ["Category:", getRadioValue('recipeCat')];
 			recipe.rDate 			= ["Date:", $("chooseDate").value];
 			recipe.rFlavor 			= ["Flavor:", $("flavorRange").value];
-			recipe.rIngredients 	= ["Ingredients:", $("ingredients").value];
+			recipe.rIngredients 	= ["Ingredients:", ingredientsArray];
 			recipe.rDirections 		= ["Directions:", $("directions").value];
 			recipe.rLanguage		= ["Language:", $("language").value];	
 		
 		//Write recipe to local storage	
-		//console.log(recipe);
 		localStorage.setItem(key, JSON.stringify(recipe));
 		
 		//Clear Form
@@ -74,7 +87,6 @@ window.addEventListener("DOMContentLoaded", function (){
 		var radioGroup = document.getElementsByName(radioName);
 		var radioValue;
 		for (var i=0; i < radioGroup.length; i++){
-   			//console.log(radioGroup[i].value);
    			if (radioGroup[i].checked) {
       			radioValue = radioGroup[i].value;
       			break;
@@ -86,9 +98,7 @@ window.addEventListener("DOMContentLoaded", function (){
 	function setRadioValue(radioName, radioValue) {
 		var radioGroup = document.getElementsByName(radioName);
 		for (var i=0; i < radioGroup.length; i++){
-   			//console.log(radioGroup[i].value);
    			if (radioGroup[i].value === radioValue) {
-      			//radioGroup[i].setAttribute("checked","checked");
       			radioGroup[i].value = radioValue;
       			radioGroup[i].checked = true;
       			break;
@@ -99,7 +109,6 @@ window.addEventListener("DOMContentLoaded", function (){
 	function clearRadioValue(radioName) {
 		var radioGroup = document.getElementsByName(radioName);
 		for (var i=0; i < radioGroup.length; i++){
-   			//console.log(radioGroup[i].value);
    			if (radioGroup[i].checked == true) {
  				radioGroup[i].checked = false;
  				break;
@@ -111,7 +120,6 @@ window.addEventListener("DOMContentLoaded", function (){
 		var radioGroup = document.getElementsByName(radioName);
 		var boolFlag;
 		for (var i=0; i < radioGroup.length; i++){
-			//console.log("Value = " + radioGroup[i].value + " | isChecked = " + radioGroup[i].checked);
 			if(radioGroup[i].checked) {
 				boolFlag = true;
 				break;
@@ -120,6 +128,61 @@ window.addEventListener("DOMContentLoaded", function (){
 			};
    		};
    		return boolFlag;
+	};
+
+	function addIngredient(processValue) {
+		var uniqueKey = Math.floor(Math.random()*100000001);
+
+		var container = $('gIngredientContainer');
+		var ingredientListItem = document.createElement('li');
+		var ingredientInput = document.createElement('input');
+		var ingredientDelete = document.createElement('a');
+
+		//Pass this unique key to the remove link
+		ingredientDelete.key = uniqueKey;
+
+		//Add unique id to list item
+		ingredientListItem.setAttribute('id', uniqueKey);	
+
+
+		//Set Input attributes
+		ingredientInput.setAttribute('type', 'text');
+		ingredientInput.setAttribute('class','gIngredient fade');
+		ingredientInput.setAttribute('placeholder','New Ingredient Item');	
+
+		//Set Anchor tag attributes
+		ingredientDelete.href = '#';
+		ingredientDelete.setAttribute('class', 'gRemoveIngredient');
+		ingredientDelete.innerHTML = 'Remove';
+
+		//Add elements to dom
+		ingredientListItem.appendChild(ingredientInput);
+		ingredientListItem.appendChild(ingredientDelete);
+		container.appendChild(ingredientListItem);
+
+		//Bind event to link
+		ingredientDelete.addEventListener('click', removeIngredient);
+
+		//To handle user or edit pop
+		if(processValue != 'new') {
+			ingredientInput.value = processValue;
+		} else {
+			ingredientInput.innerHTML = '';
+		};
+
+		//Init fade in
+		setTimeout(function() {
+    		ingredientInput.className = 'gIngredient fade fadeIn';
+		}, 50);		
+	};
+
+	function removeIngredient(e) {
+		uniqueKey = this.key;
+		//Find Element
+		this.removeEventListener('click', removeIngredient);
+		thisElement = document.getElementById(uniqueKey);
+		thisElement.parentNode.removeChild(thisElement);
+
 	};
 
 	function toggleDisplay(argBool) {
@@ -311,12 +374,19 @@ window.addEventListener("DOMContentLoaded", function (){
 	};	
 
 	function editListItem() {
+		//Show form
+		toggleDisplay('updateEntry');
+		
 		//Get data from localstorage
 		var value = localStorage.getItem(this.key);
 		var recipe = JSON.parse(value);
 
-		//Show form
-		toggleDisplay('updateEntry');
+		//Convert parse ingredient list back into array
+		var ingredientArray = recipe.rIngredients[1].toString().split(',');
+
+		for(i=0; i < ingredientArray.length; i++ ) {
+			addIngredient(ingredientArray[i]);
+		};
 
 		//populate
 		$("recipeTitle").value 		= recipe.rTitle[1];
@@ -324,9 +394,9 @@ window.addEventListener("DOMContentLoaded", function (){
 		$("userDifficulty").value 	= recipe.rDifficulty[1];
 		$("chooseDate").value 		= recipe.rDate[1];
 		$("flavorRange").value 		= recipe.rFlavor[1];
-		$("ingredients").value 		= recipe.rIngredients[1];
 		$("directions").value 		= recipe.rDirections[1];
 
+		
 		setRadioValue('recipeCat',recipe.rCategory[1]);
 
 		//Remove existing listener on save btn
@@ -458,14 +528,14 @@ window.addEventListener("DOMContentLoaded", function (){
 		
 		// Zero out all values for new recipe entry 
 		clearRadioValue('recipeCat');
-		$("recipeTitle").value 		= ""
-		$("recipeSummary").value 	= ""
-		$("userDifficulty").value 	= ""
-		$("chooseDate").value 		= ""
-		$("flavorRange").value 		= ""
-		$("ingredients").value 		= ""
-		$("directions").value 		= ""
-		$('submitForm').value 		='Save Recipe';
+		$('recipeTitle').value 		= ''
+		$('recipeSummary').value 	= ''
+		$('userDifficulty').value 	= ''
+		$('chooseDate').value 		= ''
+		$('flavorRange').value 		= ''
+		$('directions').value 		= ''
+		$('submitForm').value 		= 'Save Recipe';
+		$('gIngredientContainer').innerHTML = ''
 	};
 
 
@@ -473,6 +543,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		var saveRecipe 			= $('submitForm');
 		var displayDataBtn 		= $('displayData');
 		var clearLocalDataBtn 	= $('clearData');
+		var addIngredientBtn	= $('gAddIngredient');
 		var errorBox			= $('errorBox');
 		var btnListener 		= true;	
 		
@@ -485,6 +556,9 @@ window.addEventListener("DOMContentLoaded", function (){
 	saveRecipe.addEventListener('click', validateRecipe);
 	displayDataBtn.addEventListener('click', buildDataList);
 	clearLocalDataBtn.addEventListener('click', clearLocalData);
+	addIngredientBtn.addEventListener('click', function(){
+  		addIngredient('new');
+	});
 
 	//Create Select Element Dropdown.
 	buildSelect('chooseDifficulty', 'Difficulty', difficultyArray);
