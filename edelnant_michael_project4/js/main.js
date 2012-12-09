@@ -559,8 +559,9 @@ window.addEventListener("DOMContentLoaded", function (){
 	saveRecipe.addEventListener('click', validateRecipe);
 	displayDataBtn.addEventListener('click', buildDataList);
 	clearLocalDataBtn.addEventListener('click', clearLocalData);
-	addIngredientBtn.addEventListener('click', function(){
+	addIngredientBtn.addEventListener('click', function(e){
   		addIngredient('new');
+  		e.preventDefault();
 	});
 
 	//Create Select Element Dropdown.
