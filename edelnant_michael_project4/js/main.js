@@ -161,7 +161,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		container.appendChild(ingredientListItem);
 
 		//Bind event to link
-		ingredientDelete.addEventListener('click', removeIngredient);
+		ingredientDelete.addEventListener('click', removeIngredient);	
 
 		//To handle user or edit pop
 		if(processValue != 'new') {
@@ -173,9 +173,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		//Init fade in
 		setTimeout(function() {
     		ingredientInput.className = 'gIngredient fade fadeIn';
-		}, 50);
-
-		e.preventDefault();	
+		}, 50);	
 	};
 
 	function removeIngredient(e) {
@@ -184,8 +182,8 @@ window.addEventListener("DOMContentLoaded", function (){
 		this.removeEventListener('click', removeIngredient);
 		thisElement = document.getElementById(uniqueKey);
 		thisElement.parentNode.removeChild(thisElement);
-
 		e.preventDefault();
+
 	};
 
 	function toggleDisplay(argBool) {
