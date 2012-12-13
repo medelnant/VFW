@@ -132,11 +132,15 @@ window.addEventListener("DOMContentLoaded", function (){
 
 	function addIngredient(processValue) {
 		var uniqueKey = Math.floor(Math.random()*100000001);
-
 		var container = $('gIngredientContainer');
 		var ingredientListItem = document.createElement('li');
 		var ingredientInput = document.createElement('input');
 		var ingredientDelete = document.createElement('a');
+
+		if(container.className === 'activeError') {
+			container.className = '';
+			container.innerHTML = '';
+		};
 
 		//Pass this unique key to the remove link
 		ingredientDelete.key = uniqueKey;
@@ -147,7 +151,7 @@ window.addEventListener("DOMContentLoaded", function (){
 
 		//Set Input attributes
 		ingredientInput.setAttribute('type', 'text');
-		ingredientInput.setAttribute('class','gIngredient fade');
+		ingredientInput.setAttribute('class','gIngredient');
 		ingredientInput.setAttribute('placeholder','New Ingredient Item');	
 
 		//Set Anchor tag attributes
@@ -170,10 +174,6 @@ window.addEventListener("DOMContentLoaded", function (){
 			ingredientInput.innerHTML = '';
 		};
 
-		//Init fade in
-		setTimeout(function() {
-    		ingredientInput.className = 'gIngredient fade fadeIn';
-		}, 50);	
 	};
 
 	function removeIngredient(e) {
@@ -280,8 +280,10 @@ window.addEventListener("DOMContentLoaded", function (){
 			//Define key per loopIndex
 			var storageKey = localStorage.key(i);
 
+
 			//Convert localStorage item back to object
 			var storageObject = JSON.parse(localStorage.getItem(storageKey));
+			var itemCategory = storageObject.rCategory[1];
 
 			//Define listItem
 			var listItem 				= document.createElement('li');
@@ -316,6 +318,8 @@ window.addEventListener("DOMContentLoaded", function (){
 			};
 			
 			//Build Main List Item by adding individual elements
+			
+			getListItemImage(listItemTitleWrapper, itemCategory);
 			listItemTitleWrapper.appendChild(listItemTitle);
 			listItemTitleWrapper.appendChild(listItemDescription);
 			listItem.appendChild(listItemTitleWrapper);
@@ -335,6 +339,12 @@ window.addEventListener("DOMContentLoaded", function (){
     		list.className = 'fade fadeIn';
 		}, 50);
 
+	};
+
+	function getListItemImage(argTarget, argCat) {
+		var newImg = document.createElement('img');
+		newImg.setAttribute('src', 'img/' + argCat + '.png');
+		argTarget.appendChild(newImg);
 	};
 
 	//Nothing has been saved by user. Pre-populate the list with 
@@ -426,8 +436,9 @@ window.addEventListener("DOMContentLoaded", function (){
 
 	function validateRecipe(e) {
 		var reqElements = document.getElementsByClassName('gRequired');
-		
+		var ingredientContainer = $('gIngredientContainer');
 		//Reset Error
+
 		errorBox.innerHTML = '';
 		errorArray = [];
 
@@ -464,6 +475,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		            return false;
 				};
 			};
+
 		};
 		
 		radioList = document.getElementById('subList');
@@ -474,6 +486,17 @@ window.addEventListener("DOMContentLoaded", function (){
 			radioList.className += 'error';
 			errorArray.push('Please provide a category.');			
 		};
+		
+		//Check for no ingredients
+		if(ingredientContainer.innerHTML == '') {
+			var ingErrorLi = document.createElement('li');
+			ingErrorLi.className = 'error errorListItem';
+			ingErrorLi.innerHTML = 'Please provide atleast one ingredient';
+			ingredientContainer.className = 'activeError';
+			ingredientContainer.appendChild(ingErrorLi);
+			errorArray.push('Please provide atleast one ingredient.')
+		};
+
 
 		//Handle errorBox messages via errorArray.
 		if(errorArray.length > 0) {
@@ -491,12 +514,15 @@ window.addEventListener("DOMContentLoaded", function (){
 		};
 
 
+
+
 	};
 
 	//User Initiated Delete Local Storage. Using confirmBox.
 	function clearLocalData(){
 		if(!localStorage.length){
-			alert("Sorry, there are no recipes to clear.");	
+			alert("Sorry, there are no recipes to clear.");
+			resetForm();	
 		} else {
 			//Offer the user a confirmationBox
             var confirmListDelete = confirm("Are you sure you want to clear all of the recipe data?");

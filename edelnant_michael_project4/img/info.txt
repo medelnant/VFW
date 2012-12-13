@@ -1,1 +1,3 @@
-Placed here due to Github not adding empty directory on initial commit.
+Image icons provided by:
+http://www.freedesign4.me/vectors/free-vector-food-icons/
+License: Free for personal use.

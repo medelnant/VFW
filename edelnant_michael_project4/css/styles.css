@@ -469,10 +469,15 @@ ul#dataList li div {
 					0 .2em .5em rgba(0, 0, 0, 0.1);
 
 }
+ul#dataList li div img {
+	position: absolute;
+	top: .2em;
+	left: .5em;
+}
 
+/*
 ul#dataList li div:before {
 
-	/*Generic Properties*/
 	content:" ♨ ";
 	display: block;
 	position: absolute;
@@ -482,13 +487,13 @@ ul#dataList li div:before {
 	left: .4em;
 	top: .45em;
 	text-align: center;
-
-	/*Text*/
 	color: #0A0C0F;
 	font-size: 1.75em;
 	text-shadow: 0 .075em 0 rgba(255,255,255,.5);
 
 }
+*/
+
 
 ul#dataList li div h3 {
 	margin: 0;
