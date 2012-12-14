@@ -548,6 +548,14 @@ ul#dataList li p a:first-child {float: left;}
 ul#dataList li p a:last-child {float: right;}
 ul#dataList li p a:hover {text-decoration: none;}
 
+ul#dataList li ul li ol {
+	margin: 0;
+	padding: 0;
+}
+ul#dataList li ul li ol li:before {
+	content: '-';
+}
+
 /*Animation*/
 .fade {
  	opacity: 0;

@@ -299,6 +299,26 @@ window.addEventListener("DOMContentLoaded", function (){
 					listItemTitle.innerHTML = storageObject[key][1];
 				} else if (key === 'rDescription') {
 					listItemDescription.innerHTML = storageObject[key][1];
+				} else if (key === 'rIngredients') {
+					
+					var subListItem 		= document.createElement('li');
+					var subListItemTitle	= document.createElement('strong');
+					var orderedListIng		= document.createElement('ol');
+
+					var ingArray = storageObject[key][1].split(',');
+					//console.log(ingArray);
+					for(k=0; k < ingArray.length; k++) {
+						var orderedListIngLi	= document.createElement('li');
+						orderedListIngLi.innerHTML = ingArray[k];
+						orderedListIng.appendChild(orderedListIngLi);
+					};
+
+					subListItemTitle.innerHTML = storageObject[key][0] + "&nbsp;";
+					subListItem.appendChild(subListItemTitle);
+					subListItem.appendChild(orderedListIng);
+					//Add subListItem to subList
+					listSubList.appendChild(subListItem);
+				
 				} else {
 					var subListItem 		= document.createElement('li');
 					var subListItemTitle 	= document.createElement('strong');
