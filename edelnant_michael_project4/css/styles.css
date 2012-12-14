@@ -614,18 +614,14 @@ form #errorBox li:last-child {margin: 0;}
 #gIngredientContainer li {position: relative;}
 #gIngredientContainer li a {
 	position: absolute;
+	font-size: 14px;
+	font-size: normal;
 	display: block;
-	top: 0;
-	right: 0;
-}
-#gIngredientContainer li a:before {
-	display: block;
-	content: '⊗';
-	font-size: 30px;
-	font-weight: normal;
-	position: absolute;
-	top: -1px;
-	right: 5px;
-	color: rgba(175, 10, 36, .5);
+	top: 1px;
+	right: 0.5em;
+	color: rgba(175,10,36,.75);
+	height: 36px;
+	line-height: 36px;
+	width: auto;
 }
 
