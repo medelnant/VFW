@@ -577,6 +577,7 @@ ul#dataList li ul li ol li:before {
 .error[type="text"] {border: 1px solid #CF2219 !important; box-shadow: 0 0 1em rgba(175, 54, 54, .25);}
 
 #subList.error {background: rgba(255,255,255,.45);}
+.activeError li {background: rgba(255,255,255,.45); padding: 1em; font-size: 1.5em; color: #CF2219;}
 
 .error:focus,
 .error[type="text"]:focus {box-shadow: 0 0 1em rgba(175, 54, 54, .25);}
