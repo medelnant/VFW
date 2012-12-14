@@ -621,11 +621,11 @@ form #errorBox li:last-child {margin: 0;}
 #gIngredientContainer li a:before {
 	display: block;
 	content: '⊗';
-	font-size: 4em;
+	font-size: 30px;
 	font-weight: normal;
 	position: absolute;
-	top: -7px;
-	right: 3px;
+	top: -1px;
+	right: 5px;
 	color: rgba(175, 10, 36, .5);
 }
 
