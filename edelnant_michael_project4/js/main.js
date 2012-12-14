@@ -157,7 +157,7 @@ window.addEventListener("DOMContentLoaded", function (){
 		//Set Anchor tag attributes
 		ingredientDelete.href = '#';
 		ingredientDelete.setAttribute('class', 'gRemoveIngredient');
-		ingredientDelete.innerHTML = '';
+		ingredientDelete.innerHTML = 'Remove';
 
 		//Add elements to dom
 		ingredientListItem.appendChild(ingredientInput);
