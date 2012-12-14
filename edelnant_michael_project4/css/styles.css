@@ -615,13 +615,17 @@ form #errorBox li:last-child {margin: 0;}
 #gIngredientContainer li a {
 	position: absolute;
 	display: block;
-	height: 3.5em;
-	width: 4em;
-	line-height: 3.5em;
-	color: red;
-	font-size: 1.2em;
 	top: 0;
 	right: 0;
-	padding: 0 0.5em;
-
 }
+#gIngredientContainer li a:before {
+	display: block;
+	content: '⊗';
+	font-size: 4em;
+	font-weight: normal;
+	position: absolute;
+	top: -.18em;
+	right: .1em;
+	color: rgba(175, 10, 36, .5);
+}
+
