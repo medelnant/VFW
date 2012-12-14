@@ -624,8 +624,8 @@ form #errorBox li:last-child {margin: 0;}
 	font-size: 4em;
 	font-weight: normal;
 	position: absolute;
-	top: -.18em;
-	right: .1em;
+	top: -7px;
+	right: 3px;
 	color: rgba(175, 10, 36, .5);
 }
 
